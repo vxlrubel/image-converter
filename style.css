@@ -23,7 +23,16 @@ body{
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-
+.border-dashed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--color-secondary);
+    aspect-ratio: 16/5;
+}
+.border-dashed:hover{
+    background-color: #f1f2f6;
+}
 #imageBox:not(:empty){
     padding: 15px;
     border: 1px solid #dee2e6;
@@ -31,6 +40,8 @@ body{
 }
 #uploadForm{
     margin-inline: auto;
+    padding: 15px;
+    border: 1px solid var(--color-secondary);
 }
 
 #uploadForm,

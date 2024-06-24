@@ -11,7 +11,9 @@
     <h2>Upload Images to Convert to WebP</h2>
 
     <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-        <label for="images" class="browse-image">Select images:</label>
+        <div class="border-dashed">
+            <label for="images" class="browse-image">Select images:</label>
+        </div>
         <input type="file" name="images[]" id="images" multiple accept="image/jpeg">
         <br>
         <label for="quality">Select quality (1-100):</label>
