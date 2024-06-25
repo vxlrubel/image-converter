@@ -206,6 +206,27 @@ input[type="submit"]:hover{
 input[type="number"]:invalid{
     color: var(--color-red);
 }
+.noticebox {
+	width: 100%;
+	margin-inline: auto;
+	max-width: 400px;
+    margin-bottom: 15px;
+}
+[class^='notice-']{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+}
+.notice-success{
+    border-left: 4px solid #00800087;
+    background-color: #0080001c;
+}
+.notice-error {
+	border-left: 4px solid #eb3b5aa6;
+	background-color: #eb3b5a21;
+}
 @keyframes spin{
     0%{
         transform: rotate(0deg);
