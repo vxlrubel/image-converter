@@ -22,9 +22,23 @@
                 <input type="number" name="quality" id="quality" min="1" max="100" value="80">
             </div>
             <input type="submit" value="Convert Images" name="submit">
-        </div>
-        
+        </div>        
     </form>
+
+    <div class="noticebox">
+        <?php
+            if( isset($_GET['success'])){
+                $success_notice = $_GET['success'] ? 'File converted successfully.': '';
+                echo "<div class=\"notice-success\">{$success_notice}</div>";
+            }
+            if( isset($_GET['error'])){
+                $error = $_GET['error'] ? 'Please upload file then submit.': '';
+                echo "<div class=\"notice-error\">{$error}</div>";
+            }
+        
+            
+        ?>
+    </div>
     <div id="imageBox"></div>
 
     <script>
