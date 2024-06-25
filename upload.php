@@ -38,11 +38,11 @@ if (isset($_POST['submit'])) {
             // Free up memory
             imagedestroy($image);
             imagedestroy($newImage);
-            header('location: index.php?success');
+            header('location: index.php?success=true');
             die();
             
         } else {
-            header('location: index.php?error');
+            header('location: index.php?error=true');
             die();
         }
     }
