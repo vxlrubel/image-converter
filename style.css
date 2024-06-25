@@ -1,6 +1,7 @@
 :root{
     --color-primary:#45aaf2;
-    --color-secondary:#303952;
+    --color-secondary:#5b5b5bcf;
+    --color-border: #cecece;
 }
 *,*::before,*::after{
     box-sizing: border-box;
@@ -27,7 +28,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px dashed var(--color-secondary);
+    border: 2px dashed var(--color-border);
     aspect-ratio: 16/5;
 }
 .border-dashed:hover{
@@ -35,13 +36,13 @@ body{
 }
 #imageBox:not(:empty){
     padding: 15px;
-    border: 1px solid #dee2e6;
+    border: 1px solid var(--color-border);
     box-shadow: 0 0 3px 0 #00000001;
 }
 #uploadForm{
     margin-inline: auto;
     padding: 15px;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--color-border);
 }
 
 #uploadForm,
