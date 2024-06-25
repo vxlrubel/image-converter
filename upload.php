@@ -21,8 +21,8 @@ if (isset($_POST['submit'])) {
         if (move_uploaded_file($tmpName, $uploadFile)) {
             // Get image dimensions
             list($width, $height) = getimagesize($uploadFile);
-            $newWidth = $width / 2;  // Reducing the size by half
-            $newHeight = $height / 2; // Reducing the size by half
+            $newWidth = $width / 1;  // Reducing the size by half
+            $newHeight = $height / 1; // Reducing the size by half
 
             // Load the image
             $image = imagecreatefromjpeg($uploadFile);
@@ -38,11 +38,12 @@ if (isset($_POST['submit'])) {
             // Free up memory
             imagedestroy($image);
             imagedestroy($newImage);
-
-            echo "Successfully uploaded and converted: " . $fileName . "<br>";
+            header('location: index.php?success');
+            die();
+            
         } else {
-            echo "Failed to upload: " . $fileName . "<br>";
+            header('location: index.php?error');
+            die();
         }
     }
 }
-?>
