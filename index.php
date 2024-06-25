@@ -15,11 +15,15 @@
             <label for="images" class="browse-image">Select images:</label>
         </div>
         <input type="file" name="images[]" id="images" multiple accept="image/jpeg">
-        <br>
-        <label for="quality">Select quality (1-100):</label>
-        <input type="number" name="quality" id="quality" min="1" max="100" value="80">
-        <br>
-        <input type="submit" value="Convert Images" name="submit">
+
+        <div class="d-flex">
+            <div class="quality">
+                <label for="quality">Quality (1-100):</label>
+                <input type="number" name="quality" id="quality" min="1" max="100" value="80">
+            </div>
+            <input type="submit" value="Convert Images" name="submit">
+        </div>
+        
     </form>
     <div id="imageBox"></div>
 
@@ -43,7 +47,7 @@
 
                     const fileHtml = `
                     <div class="preview-image" id="file-${i}">
-                        <div class="image">
+                        <div class="image loading" id="image-${i}">
                             <img src="${fileUrl}" alt="${file.name}">
                         </div>
                         <div class="image-info">
@@ -60,6 +64,7 @@
                     // Simulate loading effect and then update status to uploaded
                     setTimeout(function() {
                         $(`#file-${i} .status`).removeClass('loading').addClass('uploaded');
+                        $(`#image-${i}.image`).removeClass('loading');
                     }, 2000);
                 });
             });
